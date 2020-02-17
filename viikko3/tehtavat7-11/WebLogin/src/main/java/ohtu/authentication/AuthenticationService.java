@@ -1,5 +1,7 @@
 package ohtu.authentication;
 
+import java.util.regex.Pattern;
+
 import ohtu.data_access.UserDao;
 import ohtu.domain.User;
 import ohtu.util.CreationStatus;
@@ -32,6 +34,22 @@ public class AuthenticationService {
 
         if (username.length()<3 ) {
             status.addError("username should have at least 3 characters");
+        }
+        
+        if (Pattern.matches(".*[^a-z].*", username)) {
+        	status.addError("username should consist only of letters from a to z");
+        }
+        
+        if (password.length()<8) {
+        	status.addError("password should have at least 8 characters");
+        }
+        
+        if (!Pattern.matches(".*[^a-zA-Z]{1,}.*", password)) {
+        	status.addError("password must contain at least one character that is not a letter");
+        }
+        
+        if (!password.equals(passwordConfirmation)) {
+        	status.addError("password and password confirmation do not match");
         }
 
         if (status.isOk()) {
