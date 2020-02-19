@@ -26,6 +26,19 @@ public class Stepdefs {
     	selectAndClickCommand("register new user");
     }
     
+    @Given("user with username {string} with password {string} is successfully created")
+    public void userWithUsernameWithPasswordIsSuccessfullyCreated(String username, String password) {
+        selectAndClickCommand("register new user");
+        createUserWith(username, password, password);
+    }
+    
+    @Given("user with username {string} and password {string} is tried to be created")
+    public void userWithUsernameAndPasswordIsTriedToBeCreated(String username, String password) {
+    	selectAndClickCommand("register new user");
+        createUserWith(username, password, password);
+    }
+
+
     @When("a valid username {string} and password {string} and matching password confirmation are entered")
     public void aValidUsernameAndPasswordAndMatchingPasswordConfirmationAreEntered(String username, String password) {
         createUserWith(username, password, password);
