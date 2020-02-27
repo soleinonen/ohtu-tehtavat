@@ -86,5 +86,31 @@ public class KauppaTest {
         // sitten suoritetaan varmistus, että pankin metodia tilisiirto on kutsuttu
         verify(pankki).tilisiirto("pekka", 42, "12345", "33333-44455", 5);
     }
+    
+    @Test
+    public void aloitaAsiointiLuoTyhjanAsiointiTapahtuman() {
+    	k.lisaaKoriin(1);
+    	k.aloitaAsiointi();
+    	k.tilimaksu("pekka", "12345");
+    	verify(pankki).tilisiirto("pekka", 42, "12345", "33333-44455", 0);
+    }
+    
+    @Test
+    public void kauppaPyytaaUudenViitenumeronJokaTapahtumalle() {
+    	k.lisaaKoriin(1);
+    	k.tilimaksu("pekka", "12345");
+    	k.aloitaAsiointi();
+    	k.lisaaKoriin(1);
+    	k.tilimaksu("pekka", "12345");
+    	verify(viite, times(2)).uusi();
+    }
+    
+    @Test
+    public void poistaKoristaMetodiPoistaaTuotteenKorista() {
+    	k.lisaaKoriin(1);
+    	k.poistaKorista(1);
+    	verify(varasto).palautaVarastoon(new Tuote(1, "maito", 5));
+    	
+    }
 }
 
