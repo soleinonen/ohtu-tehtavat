@@ -1,1 +1,1 @@
-Eka committi
+Toka committi
