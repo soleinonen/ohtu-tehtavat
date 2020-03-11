@@ -18,11 +18,17 @@ public abstract class Komento {
 		this.sovellus = sovellus;
 	}
 	
-	protected void tyhjennaSyotekentta() {
+	protected void paivitaNakyma() {
+		tuloskentta.setText(String.valueOf(sovellus.tulos()));
+		tyhjennaSyotekentta();
+		paivitaNollaaTila();
+	}
+	
+	private void tyhjennaSyotekentta() {
 		syotekentta.setText("");
 	}
 	
-	protected void paivitaNollaaTila() {
+	private void paivitaNollaaTila() {
 		if ( Integer.parseInt(tuloskentta.getText())==0) {
             nollaa.disableProperty().set(true);
         } else {

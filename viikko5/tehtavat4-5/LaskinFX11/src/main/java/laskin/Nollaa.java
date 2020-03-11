@@ -11,9 +11,8 @@ public class Nollaa extends Komento{
 	
 	@Override
 	public void suorita() {
-		tuloskentta.setText(""+0);
-		tyhjennaSyotekentta();
-		paivitaNollaaTila();
+		sovellus.nollaa();
+		paivitaNakyma();
 	}
 	
 	@Override

@@ -11,9 +11,8 @@ public class Summa extends Komento{
 	
 	@Override
 	public void suorita() {
-		tuloskentta.setText(String.valueOf(Integer.valueOf(tuloskentta.getText()) + Integer.valueOf(syotekentta.getText())));
-		tyhjennaSyotekentta();
-		paivitaNollaaTila();
+		sovellus.plus(Integer.valueOf(syotekentta.getText()));
+		paivitaNakyma();
 	}
 	
 	@Override
