@@ -11,13 +11,15 @@ public class Nollaa extends Komento{
 	
 	@Override
 	public void suorita() {
+		edellinen = Integer.valueOf(tuloskentta.getText());
 		sovellus.nollaa();
 		paivitaNakyma();
 	}
 	
 	@Override
 	public void peru() {
-		
+		sovellus.setTulos(edellinen);
+		paivitaNakyma();
 	}
 
 }

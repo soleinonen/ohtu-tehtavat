@@ -12,12 +12,14 @@ public class Summa extends Komento{
 	@Override
 	public void suorita() {
 		sovellus.plus(Integer.valueOf(syotekentta.getText()));
+		edellinen = Integer.valueOf(syotekentta.getText());
 		paivitaNakyma();
 	}
 	
 	@Override
 	public void peru() {
-		
+		sovellus.miinus(edellinen);
+		paivitaNakyma();
 	}
 
 }

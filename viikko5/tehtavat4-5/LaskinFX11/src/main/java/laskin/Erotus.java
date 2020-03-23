@@ -12,11 +12,14 @@ public class Erotus extends Komento{
 	@Override
 	public void suorita() {
 		sovellus.miinus(Integer.valueOf(syotekentta.getText()));
+		edellinen = Integer.valueOf(syotekentta.getText());
 		paivitaNakyma();
 	}
 	
 	@Override
 	public void peru() {
+		sovellus.plus(edellinen);
+		paivitaNakyma();
 		
 	}
 
