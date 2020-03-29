@@ -11,7 +11,7 @@ public class HasFewerThan implements Matcher{
 	
 	@Override
 	public boolean matches(Player p) {
-		return !this.m.matches(p);
+		return this.m.matches(p);
 	}
 
 }
