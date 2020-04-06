@@ -9,7 +9,7 @@ public class KPSTekoaly extends AbstractKPS{
 	@Override
 	protected String toisenSiirto() {
 		String tokanSiirto = pelaaja2.annaSiirto();
-        System.out.println("Tietokone valitsi: " + tokanSiirto);
-        return tokanSiirto;
+		System.out.println("Tietokone valitsi: " + tokanSiirto);
+		return tokanSiirto;
 	}
 }

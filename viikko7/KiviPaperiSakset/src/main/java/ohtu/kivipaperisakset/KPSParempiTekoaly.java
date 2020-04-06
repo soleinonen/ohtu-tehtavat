@@ -8,9 +8,9 @@ public class KPSParempiTekoaly extends AbstractKPS{
 
 	@Override
 	protected String toisenSiirto() {
-        String tokanSiirto = pelaaja2.annaSiirto();
-        System.out.println("Tietokone valitsi: " + tokanSiirto);
-        pelaaja2.asetaSiirto(ekanSiirto);
-        return tokanSiirto;
+		String tokanSiirto = pelaaja2.annaSiirto();
+		System.out.println("Tietokone valitsi: " + tokanSiirto);
+		pelaaja2.asetaSiirto(ekanSiirto);
+		return tokanSiirto;
 	}
 }

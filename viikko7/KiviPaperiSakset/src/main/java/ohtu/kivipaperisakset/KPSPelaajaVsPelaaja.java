@@ -10,7 +10,7 @@ public class KPSPelaajaVsPelaaja extends AbstractKPS{
 	@Override
 	protected String toisenSiirto() {
 		System.out.print("Toisen pelaajan siirto: ");
-        String tokanSiirto = pelaaja2.annaSiirto();
-        return tokanSiirto;
+		String tokanSiirto = pelaaja2.annaSiirto();
+		return tokanSiirto;
 	}
 }
